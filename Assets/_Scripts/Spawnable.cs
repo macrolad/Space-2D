@@ -1,10 +1,10 @@
 ﻿using UnityEngine;
 
-[System.Serializable]
-public class Spawnable 
+[CreateAssetMenu(fileName = "New Spawnable", menuName = "Space2D/Spawnable", order = 1)]
+public class Spawnable : ScriptableObject
 {
     public GameObject Prefab;
-    public int Quantity;
+    public float Size;
 
-    public GameObject[] DebrisPrefab;
+    public Spawnable[] DebrisPrefab;
 }

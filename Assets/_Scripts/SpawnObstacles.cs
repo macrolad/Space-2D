@@ -4,18 +4,12 @@ using UnityEngine;
 
 public class SpawnObstacles : MonoBehaviour
 {
-    [SerializeField]
+    public float MaxSpawn;
     public Spawnable[] ObjectsToSpawn;
-
-    [Space]
-    public List<GameObject> DebrisList = new List<GameObject>();
 
     private void Start()
     {
-        for (int i = 0; i < ObjectsToSpawn.Length; i++)
-        {
-            SpawnPrefabs(ObjectsToSpawn[i]);
-        }
+        Spawn();
     }
 
     public Vector2 SpawnPos()
@@ -27,36 +21,40 @@ public class SpawnObstacles : MonoBehaviour
         return spawnPos;
     }
 
-    public void SpawnPrefabs(Spawnable spawnable)
+    public void Spawn()
     {
-        for (int i = 0; i < spawnable.Quantity; i++)
+        float quantity = 0;
+        int randomInt = 0;
+
+        while (quantity < MaxSpawn)
         {
-            GameObject Obstacle = Instantiate(spawnable.Prefab, SpawnPos(), Quaternion.identity);
-            SpawnDebris(Obstacle, spawnable);
+            randomInt = Random.Range(0, ObjectsToSpawn.Length);
+
+            GameObject Obstacle = Instantiate(ObjectsToSpawn[randomInt].Prefab, SpawnPos(), Quaternion.identity);
+            SpawnDebris(ObjectsToSpawn[randomInt], Obstacle);
+            quantity += ObjectsToSpawn[randomInt].Size;
         }
     }
 
-    public void SpawnDebris(GameObject obstacle, Spawnable spawnable)
+    public void SpawnDebris(Spawnable parentSP, GameObject parentGO)
     {
-        if (spawnable.DebrisPrefab.Length == 0)
+        if (parentSP.DebrisPrefab.Length == 0)
         {
             return;
         }
-        else
+        float quantity = 0;
+        int randomInt = 0;
+
+        while (quantity < parentSP.Size)
         {
-            float maxSpawn = spawnable.Prefab.GetComponent<_BaseHealth>().MaxHealth;
-            int randomDebris = 0;
+            randomInt = Random.Range(0, parentSP.DebrisPrefab.Length);
 
-            while (maxSpawn > 0)
-            {
-                randomDebris = Random.Range(0, spawnable.DebrisPrefab.Length);
-                GameObject newDebris = Instantiate(spawnable.DebrisPrefab[randomDebris]);
+            GameObject debris = Instantiate(parentSP.DebrisPrefab[randomInt].Prefab, SpawnPos(), Quaternion.identity);
+            SpawnDebris(parentSP.DebrisPrefab[randomInt], debris);
+            quantity += parentSP.DebrisPrefab[randomInt].Size;
 
-                maxSpawn -= newDebris.GetComponent<_BaseHealth>().MaxHealth;
-                obstacle.GetComponent<_BaseHealth>().DebrisList.Add(newDebris);
-                newDebris.SetActive(false);
-            }
+            parentGO.GetComponent<_BaseHealth>().DebrisList.Add(debris);
+            debris.SetActive(false);
         }
-
     }
 }

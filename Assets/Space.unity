@@ -152,6 +152,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 58041783886992418, guid: 6b21bdd0c01c07846a9940149e5104ae,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6b21bdd0c01c07846a9940149e5104ae, type: 2}
   m_IsPrefabParent: 0
@@ -196,29 +201,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2331db97fecb3a040bd5f6eba7887bfe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MaxSpawn: 800
   ObjectsToSpawn:
-  - Prefab: {fileID: 1165906210272906, guid: eb522b1c1aa0c014487e95334375aac6, type: 2}
-    Quantity: 1
-    DebrisPrefab: []
-  - Prefab: {fileID: 1861151415878516, guid: ec9d387dcfc25d847893574106ea9606, type: 2}
-    Quantity: 8
-    DebrisPrefab:
-    - {fileID: 1149346081124678, guid: 0ceab9f4a59fbb44c873373b816109c6, type: 2}
-    - {fileID: 1847256537480482, guid: cf40a3a59f5e82f42a57511c6f5f37a4, type: 2}
-    - {fileID: 1800000376116470, guid: bea852f7cd37f234e978b1e1f1fdfdfb, type: 2}
-  - Prefab: {fileID: 1149346081124678, guid: 0ceab9f4a59fbb44c873373b816109c6, type: 2}
-    Quantity: 15
-    DebrisPrefab:
-    - {fileID: 1847256537480482, guid: cf40a3a59f5e82f42a57511c6f5f37a4, type: 2}
-    - {fileID: 1800000376116470, guid: bea852f7cd37f234e978b1e1f1fdfdfb, type: 2}
-  - Prefab: {fileID: 1847256537480482, guid: cf40a3a59f5e82f42a57511c6f5f37a4, type: 2}
-    Quantity: 25
-    DebrisPrefab:
-    - {fileID: 1800000376116470, guid: bea852f7cd37f234e978b1e1f1fdfdfb, type: 2}
-  - Prefab: {fileID: 1800000376116470, guid: bea852f7cd37f234e978b1e1f1fdfdfb, type: 2}
-    Quantity: 30
-    DebrisPrefab: []
-  DebrisList: []
+  - {fileID: 11400000, guid: f302556b43b839d4d98cf701bc65ca9a, type: 2}
+  - {fileID: 11400000, guid: e01157420efedeb478e20780b6370365, type: 2}
+  - {fileID: 11400000, guid: a772af1c27c707840b805d6e2b85db23, type: 2}
+  - {fileID: 11400000, guid: 4db4859c52160ac4ca7798a0c965dc54, type: 2}
 --- !u!4 &1231180273
 Transform:
   m_ObjectHideFlags: 0
