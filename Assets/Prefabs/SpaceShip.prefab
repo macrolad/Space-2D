@@ -36,8 +36,8 @@ GameObject:
   - component: {fileID: 4548431009558512}
   - component: {fileID: 58041783886992418}
   - component: {fileID: 50581066629804406}
-  - component: {fileID: 114064480595238512}
   - component: {fileID: 114008176419270632}
+  - component: {fileID: 114868579629784494}
   - component: {fileID: 114461040702636518}
   - component: {fileID: 114270476507162922}
   - component: {fileID: 114333857691863846}
@@ -153,31 +153,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df8a09e28a43a6e43adfb1926bfec152, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &114064480595238512
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1531255369777688}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 52e2233bf96e5b44b87acad5e1f6372f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  MyImage: {fileID: 212766819456268836}
-  Sprites:
-  - {fileID: 21300000, guid: ace309b3015d1764899f922ae72a3c2a, type: 3}
-  - {fileID: 21300000, guid: 01a2dac46f26697418c1affa829e74f6, type: 3}
-  - {fileID: 21300000, guid: 088765eb9a3d36e479196fcc708a42b6, type: 3}
-  - {fileID: 21300000, guid: 55c12b38a92520b4a88dc369f6295dfd, type: 3}
-  - {fileID: 21300000, guid: 384af8d9165f3334b9f97491fe4d0d60, type: 3}
-  - {fileID: 21300000, guid: 3cdee776489cde14b9420566b442f689, type: 3}
-  - {fileID: 21300000, guid: 65fe210212aedad46b01f88fb893477e, type: 3}
-  - {fileID: 21300000, guid: bfd39e5d4861b9f4380bb185ebb2a6b6, type: 3}
-  - {fileID: 21300000, guid: 1d8be889d86585e439fc27ab3061081e, type: 3}
-  - {fileID: 21300000, guid: de8f91e5b97588e44b5a229cfdb3c1aa, type: 3}
-  - {fileID: 21300000, guid: 5c9d162e1ffb440489ec3bec5ce4da49, type: 3}
-  - {fileID: 21300000, guid: 7bd71592e04ee30459f9dcf51f98204e, type: 3}
 --- !u!114 &114105007384169980
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -241,6 +216,18 @@ MonoBehaviour:
   MaxHealth: 50
   Health: 0
   DebrisList: []
+--- !u!114 &114868579629784494
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1531255369777688}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f19aa5597745324bb62d5eca01e8d2b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MyShip: {fileID: 11400000, guid: 86af879fb3fcddf48af8fb436d09053c, type: 2}
 --- !u!114 &114959164122710478
 MonoBehaviour:
   m_ObjectHideFlags: 1

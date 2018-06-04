@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerShoot : MonoBehaviour
+public class PlayerShoot : MonoBehaviour, IAssignValues
 {
     public float Damage;
     public float Cooldown;
@@ -38,5 +38,12 @@ public class PlayerShoot : MonoBehaviour
     {
         yield return new WaitForSeconds(Cooldown);
         CanAttack = true;
+    }
+
+    public void AssignValues(SpaceShipScriptable myShip)
+    {
+        Damage = myShip.Cannons.Damage;
+        Cooldown = myShip.Cannons.Cooldown;
+        ProjPrefab = myShip.Cannons.ProjPrefab;
     }
 }

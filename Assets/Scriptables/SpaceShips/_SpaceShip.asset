@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3cb34e5339b48994ca3d0000c97097ff, type: 3}
+  m_Name: _SpaceShip
+  m_EditorClassIdentifier: 
+  Cockpit: {fileID: 11400000, guid: 1bdd9f017e730754aae930d7ec8b5ff1, type: 2}
+  Cannons: {fileID: 11400000, guid: 907931015a622d44fb98177012f56e23, type: 2}
+  Wings: {fileID: 11400000, guid: 4a35532fba129064ab47a05a0dcbbf1b, type: 2}
+  Thrusters: {fileID: 11400000, guid: a6be2fa642fe5744193b71c3e8d2c9f8, type: 2}

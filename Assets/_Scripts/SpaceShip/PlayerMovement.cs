@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerMovement : MonoBehaviour
+public class PlayerMovement : MonoBehaviour, IAssignValues
 {
     [Header("Movement")]
     public float AccMovSpeed;
@@ -64,5 +64,16 @@ public class PlayerMovement : MonoBehaviour
         {
             RB.angularVelocity = Mathf.Lerp(RB.angularVelocity, 0, StabilizeSpeed * Time.deltaTime);
         }
+    }
+
+    public void AssignValues(SpaceShipScriptable myShip)
+    {
+        AccMovSpeed = myShip.Thrusters.AccMovSpeed;
+        MovSpeed = myShip.Thrusters.MovSpeed * myShip.Cockpit.SpeedMod;
+        DragSpeed = myShip.Thrusters.DragSpeed;
+
+        AccRotSpeed = myShip.Wings.AccRotSpeed;
+        RotSpeed = myShip.Wings.RotSpeed * myShip.Cockpit.SpeedMod;
+        StabilizeSpeed = myShip.Wings.StabilizeSpeed;
     }
 }
